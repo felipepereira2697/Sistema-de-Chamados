@@ -23,8 +23,8 @@ public class EmpresaTest {
     
    @Test
    public void testaConstrutorComNumeroDeContratoNegativo(){
-       Empresa empresa = new Empresa(-1212121999,"EmpresaA");
-       assertEquals(-1212121999,empresa.getNumeroContrato());
+       Empresa empresa = new Empresa(-212121999,"EmpresaA");
+       assertEquals(-212121999,empresa.getNumeroContrato());
    }
    
    @Test
