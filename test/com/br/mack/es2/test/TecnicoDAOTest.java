@@ -38,7 +38,7 @@ public class TecnicoDAOTest {
         Tecnico t = new Tecnico("Teste", 2);
         cashTecnicos.put(2, t);
         TecnicoDAO dao = new TecnicoDAO();
-        assertNull(dao.get(2));
+        assertNotNull(dao.get(2));
     }
 
     @Test
