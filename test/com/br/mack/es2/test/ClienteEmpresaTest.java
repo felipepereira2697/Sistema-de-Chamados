@@ -29,6 +29,7 @@ public class ClienteEmpresaTest {
         ClienteEmpresa cliente_empresa = new ClienteEmpresa(21,empresa,12345678,"NomeTeste",23321);
         cliente_empresa.setCodigo(-21);
         assertNotNull(cliente_empresa.getCodigo());
+        
     }
 
    
