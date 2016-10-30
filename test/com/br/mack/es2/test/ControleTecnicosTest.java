@@ -30,5 +30,19 @@ public class ControleTecnicosTest {
        Tecnico tecnico = ct.inserir(t.getTelefone(), t.getNome());
        //Se o tecnico retornado dessa função é exatamente o tecnico que mandei adicionar
        assertEquals(tecnico.getNome(),t.getNome());
+       assertEquals(tecnico.getTelefone(),t.getTelefone());
    }
+   
+   @Test
+   public void inserirTecnicoComMesmoTelefoneEMesmoNomeMasSendoObjetosDiferentes(){
+       Tecnico t = new Tecnico("TesteTecnico",34546789);
+       Tecnico t2 = new Tecnico("TesteTecnico",34546789);
+       TecnicoDAO dao = new TecnicoDAO();
+       dao.put(t);
+       dao.put(t2);
+       ControleTecnicos ct = new ControleTecnicos();
+       assertSame(t.getNome(), t2.getNome());
+       assertSame(t.getTelefone(),t2.getTelefone());
+   }
+   
 }

@@ -45,7 +45,7 @@ public class TecnicoDAOTest {
     public void testaGerarCodigoNaoNegativo() {
         TecnicoDAO dao = new TecnicoDAO();
         int esseValorNaoPodeSerNegativo = dao.gerarCodigo();
-        //se o valor gerado for menor que zero, ele irá falha
+        //se o valor gerado for menor que zero, ele irá falhar
         if (esseValorNaoPodeSerNegativo < 0) {
             fail();
         }
