@@ -8,6 +8,8 @@ package com.br.mack.es2.test;
 import com.br.mack.es2.controle.ControladorPrincipal;
 import com.br.mack.es2.controle.ControleEmpresas;
 import com.br.mack.es2.entidade.Empresa;
+import com.br.mack.es2.persistencia.EmpresaDAO;
+import java.util.Collection;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -24,8 +26,11 @@ public class ControleEmpresaTest {
    @Test
    public void testaInserir(){
        ControladorPrincipal cp = new ControladorPrincipal();
-       ControleEmpresas controle_empresas = cp.getCtrEmpresa();
+       EmpresaDAO dao = new EmpresaDAO();
+       Collection<Empresa> empresas;
+       ControleEmpresas controle_empresas = new ControleEmpresas();
        Empresa empresa = new Empresa(9090,"TesteEmpresa");
+       dao.put(empresa);
        controle_empresas.inserir(empresa.getNumeroContrato(),empresa.getNomeEmpresa());
        boolean inseriu = controle_empresas.checar(new Long(9090), "EmpresaTeste");
        assertEquals(true,inseriu);
