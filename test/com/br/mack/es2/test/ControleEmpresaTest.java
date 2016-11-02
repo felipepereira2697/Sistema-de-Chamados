@@ -24,15 +24,13 @@ import static org.junit.Assert.*;
 public class ControleEmpresaTest {
     
    @Test
-   public void testaInserir(){
+   public void testaChecar(){
        ControladorPrincipal cp = new ControladorPrincipal();
-       EmpresaDAO dao = new EmpresaDAO();
-       Collection<Empresa> empresas;
+       EmpresaDAO mapeadorEmpresa = new EmpresaDAO();
+       Collection<Empresa> empresas = null;
        ControleEmpresas controle_empresas = new ControleEmpresas();
        Empresa empresa = new Empresa(9090,"TesteEmpresa");
-       dao.put(empresa);
-       controle_empresas.inserir(empresa.getNumeroContrato(),empresa.getNomeEmpresa());
-       boolean inseriu = controle_empresas.checar(new Long(9090), "EmpresaTeste");
-       assertEquals(true,inseriu);
+       empresas.add(empresa);
+       controle_empresas.checar(empresa.getNumeroContrato(),empresa.getNomeEmpresa());
    }
 }
