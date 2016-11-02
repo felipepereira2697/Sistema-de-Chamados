@@ -29,7 +29,7 @@ public class ControleEmpresasTest {
        Empresa empresa = new Empresa(1,"Empresa");
        empresas.add(empresa);
        ControleEmpresas controle_empresas = new ControleEmpresas();
-       int a = controle_empresas.validar(1, empresa.getNomeEmpresa());
-       assertEquals(1,a);
+       int validou = controle_empresas.validar(1, empresa.getNomeEmpresa());
+       assertEquals(1,validou);
    }
 }
