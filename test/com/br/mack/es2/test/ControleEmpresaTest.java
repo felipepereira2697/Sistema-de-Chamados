@@ -10,10 +10,7 @@ import com.br.mack.es2.controle.ControleEmpresas;
 import com.br.mack.es2.entidade.Empresa;
 import com.br.mack.es2.persistencia.EmpresaDAO;
 import java.util.Collection;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -23,13 +20,14 @@ import static org.junit.Assert.*;
  */
 public class ControleEmpresaTest {
     
-//   @Test(expected=NullPointerException.class)
-//   public void testaChecar(){
-//       Collection<Empresa> empresas = null;
-//       ControleEmpresas controle_empresas = new ControleEmpresas();
-//       Empresa empresa = new Empresa(9090,"TesteEmpresa");
-//       empresas.add(empresa);
-//       boolean checou = controle_empresas.checar(empresa.getNumeroContrato(),empresa.getNomeEmpresa());
-//       assertEquals(true,checou);
-//   }
+   @Test(expected=NullPointerException.class)
+   public void testaChecar(){
+       Collection<Empresa> empresas = null;
+       ControleEmpresas controle_empresas = new ControleEmpresas();
+       Empresa empresa = new Empresa(9090,"TesteEmpresa");
+       empresas.add(empresa);
+       boolean checou = controle_empresas.checar(new Long(9090),"TesteEmpresa");
+       assertEquals(true,checou);
+   }
+   
 }
