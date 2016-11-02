@@ -23,14 +23,13 @@ import static org.junit.Assert.*;
  */
 public class ControleEmpresaTest {
     
-   @Test
+   @Test(expected=NullPointerException.class)
    public void testaChecar(){
-       ControladorPrincipal cp = new ControladorPrincipal();
-       EmpresaDAO mapeadorEmpresa = new EmpresaDAO();
        Collection<Empresa> empresas = null;
        ControleEmpresas controle_empresas = new ControleEmpresas();
        Empresa empresa = new Empresa(9090,"TesteEmpresa");
        empresas.add(empresa);
-       controle_empresas.checar(empresa.getNumeroContrato(),empresa.getNomeEmpresa());
+       boolean checou = controle_empresas.checar(empresa.getNumeroContrato(),empresa.getNomeEmpresa());
+       assertEquals(true,checou);
    }
 }
